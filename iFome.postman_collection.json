@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "9624c998-c9ad-4b51-a214-89a9c4dd7ae0",
+		"name": "iFome",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cadastro de itens",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Pizza de MUSSARELA GRANDE\",\n    \"type\": \"LANCHE\",\n    \"price\": 49.9\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8010/ifome/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"ifome",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listagem de itens (cardápio) ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/ifome/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"ifome",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastro de pedidos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Rhian Lopes da Costa\",\n    \"phone\": \"51981252681\",\n    \"items\": [\n        {\n            \"id\": 1,\n            \"quantity\": 1\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8010/ifome/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"ifome",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listagem de pedidos (filtrada pelo status)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/ifome/orders?status=REQUESTED",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"ifome",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "REQUESTED"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Confirmação de pedido",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/ifome/orders/confirm?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"ifome",
+						"orders",
+						"confirm"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Finalização de pedido",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/ifome/orders/finish?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"ifome",
+						"orders",
+						"finish"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,1 @@
+CREATE INDEX `order_item_order_id_idx` ON `order_item` ( `order_id` );

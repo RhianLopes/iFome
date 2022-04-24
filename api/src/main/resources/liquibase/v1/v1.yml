@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-item
+      author: rhian.costa
+      changes:
+        - sqlFile:
+            path: item/create-table-item.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: create-table-order
+      author: rhian.costa
+      changes:
+        - sqlFile:
+            path: order/create-table-order.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: create-table-order_item
+      author: rhian.costa
+      changes:
+        - sqlFile:
+            path: orderitem/create-table-order_item.sql
+            relativeToChangelogFile: true
+        - sqlFile:
+            path: orderitem/create-index-order_id.sql
+            relativeToChangelogFile: true
+        - sqlFile:
+            path: orderitem/create-index-item_id.sql
+            relativeToChangelogFile: true
